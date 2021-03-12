@@ -15,5 +15,5 @@
 3. 勾选“手动编辑查询” -> 在</Select>前增加代码[EventData[Data[@Name='SSID']='SUDA_WIFI']]
 4. 确定以后，在选择触发时运行的脚本：操作->新建->启动程序-程序或脚本，填入程序路径:
 * 第一栏填写Python安装目录下的pythonw.exe的完整路径
-* 第二栏填写Python脚本目录
+* 第二栏填写Python脚本路径
 * 第三栏填写Python安装目录的完整路径
