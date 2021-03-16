@@ -1,8 +1,10 @@
 import socket
 import requests
 import json
-hostname = socket.gethostname()
-ip = socket.gethostbyname(hostname)
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect(('8.8.8.8', 80))
+ip = s.getsockname()[0]
+s.close()
 print("本机ip："+ip)
 try:
     with open("config.json",encoding='utf-8') as f:
