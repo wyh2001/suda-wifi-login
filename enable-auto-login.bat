@@ -6,33 +6,40 @@ net session >nul 2>&1
 if %errorLevel% == 0 (
     echo Success: Administrative permissions confirmed.
     cls
-    goto main
+    goto start
 ) else (
     echo Failure: Current permissions inadequate.
     pause
     exit
 )
 
-:main
+:start
+cd /D %~dp0
 echo suda-wifi-login
-echo by @wyh2001
-echo By adding a task to Windows Task Scheduler, this batch file helps you automate suda-wifi-login's process
+echo Thanking to Windows Task Scheduler, it helps you automatically log into SUDA_WIFI
 pause
+goto main
+:main
 cls
-echo 1.enable
-echo 2.disable
-echo 3.exit
+echo 1.Enable
+echo 2.Disable
+echo 3.Exit
 set /p op=Type option:
 if "%op%"=="1" goto op1
 if "%op%"=="2" goto op2
 if "%op%"=="3" goto op3
 :op1
-copy login.py login.bat config.json %ProgramFiles%\suda-wifi-login
+md "%ProgramFiles%\suda-wifi-login"
+copy .\*.* "%ProgramFiles%\suda-wifi-login"
 schtasks.exe /Create /XML auto-login.xml /tn suda-wifi-login
 pause
+cls
+goto main
 :op2
-schtasks.exe /delete suda-wifi-login
-rd %ProgramFiles%\suda-wifi-login
+schtasks.exe /delete /tn "suda-wifi-login" /F
+rmdir "%ProgramFiles%\suda-wifi-login" /S /Q
 pause
+cls
+goto main
 :op3
 exit
