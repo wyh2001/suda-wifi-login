@@ -1,4 +1,20 @@
 @echo off
+goto check_Permissions
+
+echo Administrative permissions required. Detecting permissions...
+
+net session >nul 2>&1
+if %errorLevel% == 0 (
+    echo Success: Administrative permissions confirmed.
+    cls
+    goto main
+) else (
+    echo Failure: Current permissions inadequate.
+    pause
+    exit
+)
+
+:main
 echo suda-wifi-login
 echo by @wyh2001
 echo By adding a task to Windows Task Scheduler, this batch file helps you automate suda-wifi-login's process
