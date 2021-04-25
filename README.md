@@ -6,7 +6,7 @@
 # 配置  
 在`config.json`中填写学号，密码与运营商（“中国移动”或“校园网”）信息  
 # 使用  
-将`login.py`与`config.json`放于同一目录，运行`login.py`或`login.bat`  
+将`login.py`与`config.json`放于同一目录，运行`login.py`  
 # 自动化登录
 可利用Windwos下的任务计划程序，实现连接到特定无线网络时运行程序
 ## 具体步骤
