@@ -37,10 +37,10 @@ goto main
 :op1
 cls
 md "%ProgramFiles%\suda-wifi-login"
-copy config.json "%ProgramFiles%\suda-wifi-login"
-copy login.py "%ProgramFiles%\suda-wifi-login"
-copy ../login.bat "%ProgramFiles%\suda-wifi-login"
-schtasks.exe /Create /XML ../auto-login.xml /tn suda-wifi-login
+copy ../config.json "%ProgramFiles%\suda-wifi-login"
+copy ../login.py "%ProgramFiles%\suda-wifi-login"
+copy login.bat "%ProgramFiles%\suda-wifi-login"
+schtasks.exe /Create /XML auto-login.xml /tn suda-wifi-login
 pause
 cls
 goto main
