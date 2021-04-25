@@ -27,10 +27,12 @@ if "%op%"=="1" goto op1
 if "%op%"=="2" goto op2
 if "%op%"=="3" goto op3
 :op1
-cp login.py login.bat config.json %ProgramFiles%\suda-wifi-login
+copy login.py login.bat config.json %ProgramFiles%\suda-wifi-login
 schtasks.exe /Create /XML auto-login.xml /tn suda-wifi-login
+pause
 :op2
 schtasks.exe /delete suda-wifi-login
 rd %ProgramFiles%\suda-wifi-login
+pause
 :op3
 exit
