@@ -13,6 +13,10 @@
       <Enabled>true</Enabled>
       <Subscription>&lt;QueryList&gt;&lt;Query Id="0" Path="Microsoft-Windows-WLAN-AutoConfig/Operational"&gt;&lt;Select Path="Microsoft-Windows-WLAN-AutoConfig/Operational"&gt;*[System[Provider[@Name='Microsoft-Windows-WLAN-AutoConfig'] and (EventID=8001)]][EventData[Data[@Name='SSID']='TEST-SZDX-WIFI_5G']]&lt;/Select&gt;&lt;/Query&gt;&lt;/QueryList&gt;</Subscription>
     </EventTrigger>
+    <EventTrigger>
+      <Enabled>true</Enabled>
+      <Subscription>&lt;QueryList&gt;&lt;Query Id="0" Path="Microsoft-Windows-WLAN-AutoConfig/Operational"&gt;&lt;Select Path="Microsoft-Windows-WLAN-AutoConfig/Operational"&gt;*[System[Provider[@Name='Microsoft-Windows-WLAN-AutoConfig'] and (EventID=8001)]][EventData[Data[@Name='SSID']='SUDA_WIFI_5G']]&lt;/Select&gt;&lt;/Query&gt;&lt;/QueryList&gt;</Subscription>
+    </EventTrigger>
   </Triggers>
   <Principals>
     <Principal id="Author">
