@@ -1,1 +1,1 @@
-python login.bat
+python login.py
